@@ -1,0 +1,32 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+        maven {
+            url 'https://pkgs.dev.azure.com/philippmanstein/4fda5e1b-77de-491e-b0a5-c96ba43b24c5/_packaging/sample_feed/maven/v1'
+            name 'sample_feed'
+            /*
+            // When you use a private feed add:
+            authentication {
+                basic(BasicAuthentication)
+            }
+             */
+            metadataSources {
+                gradleMetadata()
+            }
+        }
+        maven {
+            url "https://storage.googleapis.com/download.flutter.io"
+        }
+    }
+}
+rootProject.name = "My Android Application"
+include ':app'
